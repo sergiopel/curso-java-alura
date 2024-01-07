@@ -1,0 +1,11 @@
+# Arquivos gerados pelo compilador
+*.class
+*.jar
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Arquivos específicos do IDE
+.idea
+*.iml
