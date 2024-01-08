@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Esse é o Screen Match!");
-        System.out.println("Filme: Top Gun: Maverick");
+        System.out.println("br.com.alura.screenmatch.modelos.Filme: Top Gun: Maverick");
 
         int anoDeLancamento = 2022; // padrão camelcase
         System.out.println("Ano de lançamento: " + anoDeLancamento);
@@ -12,14 +12,14 @@ public class Main {
         System.out.println("Média: " + media);
 
         String sinopse;
-        sinopse = "Filme de aventura com galã dos anos 80";
+        sinopse = "br.com.alura.screenmatch.modelos.Filme de aventura com galã dos anos 80";
         System.out.println(sinopse);
 
         // dá pra substituir vários System.out.println por esse formatação chamada
         // Text Block, inserida na versão 15 do Java
         sinopse = """
-                Filme Top Gun
-                Filme de aventura com galã dos anos 80
+                br.com.alura.screenmatch.modelos.Filme Top Gun
+                br.com.alura.screenmatch.modelos.Filme de aventura com galã dos anos 80
                 Muito bom!
                 Ano de lançamento
                 """ + anoDeLancamento;
