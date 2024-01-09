@@ -38,9 +38,11 @@ public class Serie extends Titulo {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
-    // sobrescrita de método, abaixo o @Override é uma anotação, que neste caso é opcional
-    // mas é bom manter porque se na classe mãe houver uma modificação, será avisado dos 2 lados
-    // que o método que sobrescreveu também precisa ser alterado
+    /* sobrescrita ou reescrita de método
+       abaixo o @Override é uma anotação, que neste caso é opcional
+       mas é bom manter porque se na classe mãe houver uma modificação, será avisado dos 2 lados
+       que o método que sobrescreveu também precisa ser alterado
+    */
     @Override
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
