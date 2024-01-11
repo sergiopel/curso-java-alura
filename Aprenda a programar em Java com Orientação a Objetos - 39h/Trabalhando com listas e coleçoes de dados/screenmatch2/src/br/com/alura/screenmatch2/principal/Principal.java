@@ -59,6 +59,6 @@ public class Principal {
         // reservada 'var' que faz uma inferência do tipo declarado, ou seja, ela faz
         // uma dedução que o tipo é Filme, de acordo com a criação do objeto 'new Filme()'
         var filmeDoPaulo = new Filme();
-        
+
     }
 }
