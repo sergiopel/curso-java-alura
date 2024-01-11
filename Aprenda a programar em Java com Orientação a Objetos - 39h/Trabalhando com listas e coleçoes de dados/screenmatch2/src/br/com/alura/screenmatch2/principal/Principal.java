@@ -6,6 +6,8 @@ import br.com.alura.screenmatch2.modelos.Episodio;
 import br.com.alura.screenmatch2.modelos.Filme;
 import br.com.alura.screenmatch2.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -59,6 +61,24 @@ public class Principal {
         // reservada 'var' que faz uma inferência do tipo declarado, ou seja, ela faz
         // uma dedução que o tipo é Filme, de acordo com a criação do objeto 'new Filme()'
         var filmeDoPaulo = new Filme();
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.setNome("Dogville");
+        filmeDoPaulo.setAnoDeLancamento(2003);
+        filmeDoPaulo.avalia(10);
+
+        /*
+        Objetivo agora é criar uma lista dos filmes criados, desses objetos
+        Trabalharemos com a classe ArrayList
+         */
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        // Pega o tamanho da lista, ou seja, a quantidade de filmes armazenados
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        // Imprimir o nome do primeiro filme, neste caso irá pegar a posição 0 da lista
+        // e depois o atributo nome do objeto.
+        System.out.println("Nome do primeiro filme: " + listaDeFilmes.get(0).getNome());
 
     }
 }
