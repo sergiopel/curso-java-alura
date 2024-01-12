@@ -1,5 +1,10 @@
 package br.com.alura.screenmatch2.modelos;
 
+//O pacote java.lang é o único pacote que não precisamos dar import
+// Todas as classes no Java são filhas de Object, estendem Object por padrão, implicitamente
+// Object é sempre a super-classe de todas as classes que criamos
+// Por exemplo, o método toString é do Object, portanto, todas as demais classes filhas
+// também tem esse método, pos é herdado
 public class Titulo {
     private String nome;
     private int anoDeLancamento;

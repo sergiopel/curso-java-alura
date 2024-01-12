@@ -80,5 +80,15 @@ public class Principal {
         // e depois o atributo nome do objeto.
         System.out.println("Nome do primeiro filme: " + listaDeFilmes.get(0).getNome());
 
+        // Consultar Java Doc no google para aprender mais
+        System.out.println(listaDeFilmes);
+        // o resultado acima será:
+        // [br.com.alura.screenmatch2.modelos.Filme@7530d0a, br.com.alura.screenmatch2.modelos.Filme@34c45dca, br.com.alura.screenmatch2.modelos.Filme@52cc8049]
+        // O pacote java.lang é o único pacote que não precisamos dar import
+        // Todas as classes, implicitamente, dão extend em Object, estendem Object por padrão.
+        System.out.println("toString do filme: " + listaDeFilmes.get(0).toString());
+
+
+
     }
 }
