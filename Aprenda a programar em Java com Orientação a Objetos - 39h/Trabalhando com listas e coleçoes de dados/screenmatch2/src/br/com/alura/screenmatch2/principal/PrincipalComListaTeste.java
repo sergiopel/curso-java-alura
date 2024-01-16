@@ -6,7 +6,7 @@ import br.com.alura.screenmatch2.modelos.Titulo;
 
 import java.util.ArrayList;
 
-public class PrincipalComListas {
+public class PrincipalComListaTeste {
     public static void main(String[] args) {
         Filme meuFilme = new Filme("O poderoso chefão", 1970);
         meuFilme.avalia(9);
@@ -35,19 +35,22 @@ public class PrincipalComListas {
             // encontrar esse método se eu usasse item.getClassificacao().
             // Mas eu posso usar o cast para dizer que o item é um Filme
             //Filme filme = (Filme) item;
+            //System.out.println(filme);
             //System.out.println("Classificação: " + filme.getClassificacao());
             // Mas a solução acima só irá funcionar para os objetos Filme, quando
             // for Serie, vai dar erro de execução, pq Serie não tem getClassificacao,
             // ou seja, Serie não é Filme
             // Então uma solução não muito elegante seria criar um if comparando
             // se o item é um Filme:
-            //if (item instanceof Filme) {
-            //    Filme filme = (Filme) item;
-            //    System.out.println("Classificação: " + filme.getClassificacao());
-            //}
+            if (item instanceof Filme) {
+                Filme filme = (Filme) item;
+                System.out.println("Classificação: " + filme.getClassificacao());
+            }
             // Simplificando a partir da versão 14, eu posso perguntar se item
             // é um filme e já declarar a variável, eliminando essa linha
             //'Filme file = (Filme) item;'
+
+            /*
             if (item instanceof Filme filme) {
                 //Filme filme = (Filme) item;
                 System.out.println("Classificação: " + filme.getClassificacao());
@@ -58,7 +61,7 @@ public class PrincipalComListas {
                 //Filme filme = (Filme) item;
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
-
+            */
 
 
         }
