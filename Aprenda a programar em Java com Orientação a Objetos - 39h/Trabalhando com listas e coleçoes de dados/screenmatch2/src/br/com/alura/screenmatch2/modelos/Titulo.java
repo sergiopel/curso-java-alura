@@ -5,7 +5,7 @@ package br.com.alura.screenmatch2.modelos;
 // Object é sempre a super-classe de todas as classes que criamos
 // Por exemplo, o método toString é do Object, portanto, todas as demais classes filhas
 // também tem esse método, pos é herdado
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -68,5 +68,10 @@ public class Titulo {
 
     public double pegaMedia() {
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
