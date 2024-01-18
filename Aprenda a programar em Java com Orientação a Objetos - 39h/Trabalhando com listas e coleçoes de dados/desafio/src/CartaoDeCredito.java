@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -8,11 +9,22 @@ import java.util.List;
 public class CartaoDeCredito {
     private double limite;
     private double saldo;
-    private List<Compra> compra;
+    private List<Compra> compras;
 
     public CartaoDeCredito(double limite) {
         this.limite = limite;
         this.saldo = limite;
+        this.compras = new ArrayList<>();
+    }
+
+    public boolean lancaCompra(Compra compra) {
+        if (this.saldo > compra.getValorDaCompra()) {
+            this.saldo -= compra.getValorDaCompra();
+            compras.add(compra);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public double getLimite() {
@@ -23,7 +35,8 @@ public class CartaoDeCredito {
         return saldo;
     }
 
-    public void lancaCompra(List<Compra> compra) {
-        this.compra = compra;
+    public List<Compra> getCompras() {
+        return compras;
     }
+
 }
