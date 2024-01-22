@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.desafios2;
+package br.com.alura.screenmatch.desafios.desafios2;
 
 public class Circulo implements Forma {
     private double raio;

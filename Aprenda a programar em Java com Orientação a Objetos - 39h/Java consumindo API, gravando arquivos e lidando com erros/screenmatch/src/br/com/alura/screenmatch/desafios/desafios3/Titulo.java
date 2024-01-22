@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.desafios3;
+package br.com.alura.screenmatch.desafios.desafios3;
 
 public class Titulo implements Comparable<Titulo>{
     private String nome;

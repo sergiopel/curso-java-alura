@@ -1,12 +1,16 @@
 package br.com.alura.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 //O pacote java.lang é o único pacote que não precisamos dar import
 // Todas as classes no Java são filhas de Object, estendem Object por padrão, implicitamente
 // Object é sempre a super-classe de todas as classes que criamos
 // Por exemplo, o método toString é do Object, portanto, todas as demais classes filhas
 // também tem esse método, pos é herdado
 public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -73,5 +77,11 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", anoDeLancamento=" + anoDeLancamento;
     }
 }

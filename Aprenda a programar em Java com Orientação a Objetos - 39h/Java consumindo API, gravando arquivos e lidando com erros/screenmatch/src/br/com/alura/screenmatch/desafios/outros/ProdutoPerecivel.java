@@ -1,4 +1,4 @@
-package br.com.alura.screenmatch.desafios;
+package br.com.alura.screenmatch.desafios.outros;
 
 public class ProdutoPerecivel extends Produto {
     private String dataDeValidade;
