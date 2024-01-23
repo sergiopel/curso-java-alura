@@ -8,9 +8,9 @@ import com.google.gson.annotations.SerializedName;
 // Por exemplo, o método toString é do Object, portanto, todas as demais classes filhas
 // também tem esse método, pos é herdado
 public class Titulo implements Comparable<Titulo> {
-    @SerializedName("Title")
+    //@SerializedName("Title")
     private String nome;
-    @SerializedName("Year")
+    //@SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -22,6 +22,13 @@ public class Titulo implements Comparable<Titulo> {
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime()
+                .substring(0, 3));
     }
 
     public int getTotalDeAvaliacoes() {
@@ -82,6 +89,7 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public String toString() {
         return "nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento;
+                ", anoDeLancamento=" + anoDeLancamento +
+                ", duração=" + duracaoEmMinutos;
     }
 }
