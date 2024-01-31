@@ -12,6 +12,18 @@ public class Principal {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
         FileWriter writer = new FileWriter("ceps.json");
+
+        ConsultaCep consultaCep = new ConsultaCep();
+
+        try {
+            Endereco address = consultaCep.buscaEndereco("09750000");
+            System.out.println(address);
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.exit(0);
+
         String cep = "";
         String endereco = "";
         String json;

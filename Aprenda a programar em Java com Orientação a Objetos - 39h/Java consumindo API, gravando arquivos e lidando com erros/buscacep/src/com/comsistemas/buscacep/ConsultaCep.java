@@ -1,3 +1,5 @@
+package com.comsistemas.buscacep;
+
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -7,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 /*
-Por que o método buscaEndereco usa o tipo Endereco, que é uma classe record?
+Por que o método buscaEndereco usa o tipo com.comsistemas.buscacep.Endereco, que é uma classe record?
 Uma classe record é um tipo especial de classe que serve para armazenar dados
 imutáveis de forma simples e transparente. Ela é uma classe final (não pode
 ser estendida) e tem todos os seus campos também finais.
@@ -15,18 +17,18 @@ Ela também tem os métodos equals, hashCode e toString gerados automaticamente
 pelo compilador, assim como um construtor público que recebe todos os campos
 como argumentos. Além disso, ela tem um método acessor público para cada campo,
 com o mesmo nome e tipo do campo.
-A classe Endereco é uma record que tem cinco campos: cep, logradouro,
+A classe com.comsistemas.buscacep.Endereco é uma record que tem cinco campos: cep, logradouro,
 complemento, localidade e uf. Esses campos representam as informações de um
 endereço obtido a partir de um serviço web.
-O método buscaEndereco da classe ConsultaCep recebe um cep como argumento e
-retorna um objeto do tipo Endereco com os dados correspondentes.
-O motivo pelo qual o método buscaEndereco usa o tipo Endereco é que ele é um
+O método buscaEndereco da classe com.comsistemas.buscacep.ConsultaCep recebe um cep como argumento e
+retorna um objeto do tipo com.comsistemas.buscacep.Endereco com os dados correspondentes.
+O motivo pelo qual o método buscaEndereco usa o tipo com.comsistemas.buscacep.Endereco é que ele é um
 tipo adequado para representar um endereço como um conjunto de dados imutáveis.
 Usando uma classe record, você evita ter que escrever código repetitivo para
 definir os campos, o construtor, os métodos acessores e os métodos equals,
-hashCode e toString. Você também garante que o objeto Endereco não será
+hashCode e toString. Você também garante que o objeto com.comsistemas.buscacep.Endereco não será
 modificado depois de criado, o que evita inconsistências e erros.
-Portanto, usar uma classe record como Endereco é uma forma conveniente e segura
+Portanto, usar uma classe record como com.comsistemas.buscacep.Endereco é uma forma conveniente e segura
 de trabalhar com dados imutáveis em Java.
  */
 public class ConsultaCep {
@@ -66,20 +68,21 @@ public class ConsultaCep {
         //String endereco = "https://viacep.com.br/ws/" + cep + "/json/";
         URI endereco = URI.create("https://viacep.com.br/ws/" + cep + "/json/");
 
-        HttpClient client = HttpClient.newHttpClient();
+        //HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(endereco)
                 .build();
-        HttpResponse<String> response = null;
+
         try {
-            response = HttpClient
+            HttpResponse<String> response = HttpClient
                     .newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException | InterruptedException e) {
+            return new Gson().fromJson(response.body(), Endereco.class);
+        } catch (Exception e) {
             throw new RuntimeException("Não consegui obter o endereço a partir desse CEP");
         }
 
-        return new Gson().fromJson(response.body(), Endereco.class);
+
     }
 
 }
