@@ -1,0 +1,38 @@
+{
+  "cep": "09710-000",
+  "logradouro": "Rua Marechal Deodoro",
+  "complemento": "até 0820 - lado par",
+  "bairro": "Centro",
+  "localidade": "São Bernardo do Campo",
+  "uf": "SP",
+  "ibge": "3548708",
+  "gia": "6350",
+  "ddd": "11",
+  "siafi": "7075"
+}{
+  "cep": "09720-000",
+  "logradouro": "Avenida Brigadeiro Faria Lima",
+  "complemento": "lado par",
+  "bairro": "Centro",
+  "localidade": "São Bernardo do Campo",
+  "uf": "SP",
+  "ibge": "3548708",
+  "gia": "6350",
+  "ddd": "11",
+  "siafi": "7075"
+}{
+  "erro": true
+}{
+  "erro": true
+}{
+  "cep": "09750-000",
+  "logradouro": "Avenida Senador Vergueiro",
+  "complemento": "até 1259/1260",
+  "bairro": "Centro",
+  "localidade": "São Bernardo do Campo",
+  "uf": "SP",
+  "ibge": "3548708",
+  "gia": "6350",
+  "ddd": "11",
+  "siafi": "7075"
+}

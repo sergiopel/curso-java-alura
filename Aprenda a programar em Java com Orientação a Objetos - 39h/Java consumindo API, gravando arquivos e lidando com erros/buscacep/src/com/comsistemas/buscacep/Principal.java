@@ -1,5 +1,6 @@
 package com.comsistemas.buscacep;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -10,6 +11,7 @@ import java.util.Scanner;
 public class Principal {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
+        FileWriter writer = new FileWriter("ceps.json");
         String cep = "";
         String endereco = "";
         String json;
@@ -40,13 +42,21 @@ public class Principal {
                 if (response.statusCode() == 400) {
                     throw new CepFormatoInvalidoException("Cep com formato inválido!");
                 }
+
                 System.out.println(response.statusCode());
                 json = response.body();
-                System.out.println(json);
+
+                System.out.println("Variável json: " + json);
+
+                writer.write(json);
 
             } catch (CepFormatoInvalidoException e) {
                 System.out.println("Erro: " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
             }
         }
+
+        writer.close();
     }
 }
